@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    @theme {
+      --font-Epilogue: "Epilogue", sans-serif; 
+    }
+    
+  </style>
+</head>
+<body>
+
+  <header class="w-full flex items-center justify-between p-10 text-neutral-600 font-medium font-[Epilogue]">
+    <div class="flex items-center gap-15">
+      <h1><img src="./images/logo.svg" alt="Logo"></h1>
+
+      <nav class="max-lg:hidden">
+        <ul class="flex items-center gap-8">
+          <li class="relative flex items-center gap-2 cursor-pointer hover:text-black">
+            <span id="sub-1" class="flex items-center gap-2">Features <img id="arrow-1" src="./images/icon-arrow-down.svg" class="w-4 h-2" alt="arrow-down"></span>
+            <ul id="sub-menu-1" class="absolute w-38 h-auto p-5 flex flex-col gap-3 shadow-2xl rounded-xl bg-white top-10 hidden">
+              <li class="flex items-center gap-4 cursor-pointer"><img src="./images/icon-todo.svg" alt="todo">Todo List</li>
+              <li class="flex items-center gap-4 cursor-pointer"><img src="./images/icon-calendar.svg" alt="calendar">Calendar</li>
+              <li class="flex items-center gap-5 cursor-pointer"><img src="./images/icon-reminders.svg" alt="reminders">Reminders</li>
+              <li class="flex items-center gap-4 cursor-pointer"><img src="./images/icon-planning.svg" alt="planing">Planing</li>
+            </ul>
+          </li>
+          <li class="relative flex items-center gap-2 cursor-pointer hover:text-black">
+            <span id="sub-2" class="flex items-center gap-2">Company<img id="arrow-2" src="./images/icon-arrow-down.svg" class="w-4 h-2" alt="arrow-down"></span>
+            <ul id="sub-menu-2" class="absolute w-30 h-auto p-5 flex flex-col gap-2 shadow-2xl rounded-xl bg-white top-10 left-15 hidden">
+              <li class="cursor-pointer">History</li>
+              <li class="cursor-pointer">Our Team</li>
+              <li class="cursor-pointer">Blog</li>
+            </ul>
+          </li>
+          <li class="cursor-pointer hover:text-black">Careers</li>
+          <li class="cursor-pointer hover:text-black">About</li>
+        </ul>
+      </nav>
+
+    </div>
+    <div class="flex items-center gap-8 max-lg:hidden">
+      <button class="w-28 h-11 cursor-pointer hover:text-black">Login</button>
+      <button class="w-28 h-11 cursor-pointer border-1 border-neutral-600 border-solid rounded-xl hover:border-neutral-900 hover:text-neutral-900">Register</button>
+    </div>
+    <button id="open-menu" class="cursor-pointer lg:hidden max-lg:block"><img src="./images/icon-menu.svg" alt=""></button>
+  </header>
+
+
+  <main class="w-full min-h-screen px-15 max-lg:px-0 font-[Epilogue] z-1">
+    <section class="w-full flex justify-center gap-40 max-lg:flex-col max-lg:gap-15">
+      <img src="./images/image-hero-mobile.png" class="lg:hidden max-lg:block w-full" alt="">
+      <div class="w-118 h-130 flex flex-col gap-10 justify-center items-start max-lg:w-full max-lg:h-auto max-lg:gap-10 max-lg:text-center max-lg:px-5 max-lg:items-center">
+        <h2 class="text-7xl font-bold max-lg:text-3xl">Make remote work</h2>
+        <p class="text-neutral-600 font-medium w-100 text-justify max-lg:text-center max-lg:w-full"> Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+        <button class="w-38 h-13 text-white font-semibold rounded-xl cursor-pointer bg-black hover:border-2 hover:border-black hover:text-black hover:bg-transparent">Learn more</button>
+        <div class="w-full flex gap-15 max-lg:gap-8 items-center justify-center">
+          <img src="./images/client-databiz.svg" class="w-25 h-6 max-lg:w-16 max-lg:h-4" alt="databiz">
+          <img src="./images/client-audiophile.svg" class="w-22 h-9 max-lg:w-13 max-lg:h-6" alt="audiophile">
+          <img src="./images/client-meet.svg" class="w-24 h-6 max-lg:w-15 max-lg:h-5" alt="meet">
+          <img src="./images/client-maker.svg" class="w-24 h-6 max-lg:w-15 max-lg:h-5" alt="maker">
+        </div>
+      </div>
+      <img src="./images/image-hero-desktop.png" class="w-110 h-130 max-lg:hidden" alt="hero">
+    </section>
+
+    <section id="overlay" class="w-full h-screen bg-black/90 flex justify-end text-neutral-600 fixed top-0 left-0 hidden">
+
+      <div class="w-65 bg-white h-full p-5 flex flex-col gap-6">
+        <span id="close-menu" class="flex justify-end"><img src="./images/icon-close-menu.svg" alt=""></span>
+        <ul class="flex gap-5 flex-col text-neutral-600">
+          <li class="flex flex-col gap-2">
+            <span id="sub-3" class="flex items-center gap-2 cursor-pointer hover:text-black">Features <img id="arrow-3" src="./images/icon-arrow-down.svg" class="w-4 h-2" alt="arrow-down"></span>
+            <ul id="sub-menu-3" class="h-auto px-10 py-2 flex flex-col gap-5 hidden">
+              <li class="flex items-center gap-4 cursor-pointer hover:text-black"><img src="./images/icon-todo.svg" alt="todo">Todo List</li>
+              <li class="flex items-center gap-4 cursor-pointer hover:text-black"><img src="./images/icon-calendar.svg" alt="calendar">Calendar</li>
+              <li class="flex items-center gap-5 cursor-pointer hover:text-black"><img src="./images/icon-reminders.svg" alt="reminders">Reminders</li>
+              <li class="flex items-center gap-4 cursor-pointer hover:text-black"><img src="./images/icon-planning.svg" alt="planing">Planing</li>
+            </ul>
+          </li>
+
+          <li class="flex flex-col gap-2">
+            <span id="sub-4" class="flex items-center gap-2 cursor-pointer hover:text-black">Company<img id="arrow-4" src="./images/icon-arrow-down.svg" class="w-4 h-2" alt="arrow-down"></span>
+            <ul id="sub-menu-4" class="h-auto px-10 py-2 flex flex-col gap-5 hidden">
+              <li class="cursor-pointer">History</li>
+              <li class="cursor-pointer">Our Team</li>
+              <li class="cursor-pointer">Blog</li>
+            </ul>
+          </li>
+          <li class="cursor-pointer hover:text-black">Careers</li>
+          <li class="cursor-pointer hover:text-black">About</li>
+        </ul>
+        <div>
+          <button class="w-full h-11 cursor-pointer hover:text-neutral-900">Login</button>
+          <button class="w-full h-11 cursor-pointer border-1 border-neutral-600 border-solid rounded-xl hover:border-neutral-900 hover:text-neutral-900">Register</button>
+        </div>
+
+        </div>
+    </section>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/byp28">byp28</a>.
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
